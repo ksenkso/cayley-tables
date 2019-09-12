@@ -1,4 +1,5 @@
-# kaly-tables
+# Cayley Tables
+This is an example of Cayley tables implementation with Vue.js
 
 ## Project setup
 ```
