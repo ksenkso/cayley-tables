@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Группы вида &lt;&#x2124;<sub>m</sub>, +> </h1>
+    <div class="tables">
+      <CayleyTable :key="i" v-for="i in 6" :m="i+2" operator="+"></CayleyTable>
+    </div>
+    <h1>Группы вида &gt;&#x2124;<sup>*</sup><sub>m</sub>, *> </h1>
+    <div class="tables">
+      <CayleyTable :key="i" v-for="i in 6" :m="i+4" operator="*" coprime></CayleyTable>
+    </div>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CayleyTable from './components/CayleyTable/CayleyTable'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CayleyTable
   }
 }
 </script>
@@ -23,6 +30,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 30px;
+
 }
+  .cayley-table {
+    margin: 30px;
+  }
+  .tables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  h1 {
+    display: block;
+    text-align: center;
+  }
 </style>
